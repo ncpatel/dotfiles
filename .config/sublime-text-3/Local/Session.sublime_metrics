@@ -1,0 +1,10 @@
+{
+	"licensed": true,
+	"packages":
+	[
+		"Nodejs",
+		"Package Control"
+	],
+	"startup_sec": 0.140457,
+	"time": 1404738787
+}

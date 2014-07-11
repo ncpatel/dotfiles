@@ -148,7 +148,8 @@ URxvt*scrollstyle: xterm
 ! URxvt*skipBuiltinGlyphs: boolean
 
 ! Specifies the terminal type name to be set in the TERM environment variable; option -tn.
-! URxvt*termName: termname
+
+URxvt*termName: rxvt
 
 ! Specifies number of lines (pixel height) to insert between each row of the display [default 0]; option -lsp.
 ! URxvt*lineSpace: number
