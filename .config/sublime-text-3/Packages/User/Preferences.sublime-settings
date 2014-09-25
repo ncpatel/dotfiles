@@ -1,0 +1,16 @@
+{
+	"caret_style": "phase",
+	"color_scheme": "Packages/User/Tomorrow-Night-Bright.tmTheme",
+	"draw_minimap_border": true,
+	"flatland_square_tabs": true,
+	"font_face": "Monaco",
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"theme": "Flatland Dark.sublime-theme"
+}
