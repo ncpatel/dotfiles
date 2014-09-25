@@ -34,7 +34,7 @@ panel_battery()
 
 panel_clock()
 {
-        echo  "⭧" $(clock -f '%a %d %I: %M')
+        echo  "⭧" $(clock -f '%a %d %I:%M')
 }
 
 panel_sigStrength()

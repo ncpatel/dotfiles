@@ -68,7 +68,7 @@
 ! URxvt*borderColor: colour
 
 ! Select the fonts to be used. This is a comma separated list of font names that are checked in order when trying to find glyphs for
- URxvt*font: xft:DejaVu Sans Mono:style=Book:size=10
+ URxvt*font: xft:DejaVu Sans Mono:style=Book:size=12
 
 ! URxvt*boldFont: fontlist
 
