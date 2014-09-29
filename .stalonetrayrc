@@ -1,0 +1,6 @@
+icon_gravity NE
+grow_gravity E
+icon_size 16
+fuzzy_edges 0
+geometry 1x1+1640+0
+background "#252117"

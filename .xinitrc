@@ -3,7 +3,6 @@ xset +fp /usr/share/fonts/misc
 xset +fp $HOME/.fonts
 xset fp rehash
 setxkbmap dvorak
-
 xrdb ~/.Xresources
 sxhkd &
 xsetroot -cursor_name left_ptr
@@ -16,5 +15,7 @@ sh ~/.fehbg &
 #./panel &
 #cd ~/code/tint3/src
 tint3 &
+stalonetray &
+nm-applet &
 owncloud &
 exec bspwm

@@ -86,13 +86,13 @@ XF86MonBrightnessDown
 	xbacklight -dec 14 && ~/.scripts/brightnessScript
 
 XF86AudioRaiseVolume
-	amixer -c 1 set Master 10%+
+	amixer sset Master 10%+
 
 XF86AudioLowerVolume
-	amixer -c 1 set Master 10%-
+	 amixer sset Master 10%-
 
 XF86AudioMute
-	(amixer -c 1 get Master | grep off > /dev/null && amixer -c 1 -q set Master unmute) || amixer -c 1 -q set Master mute
+	 amixer sset Master toggle
 
 #
 # wm independent hotkeys

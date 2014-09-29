@@ -1,7 +1,7 @@
 set tabstop=2
 syntax enable
 set background=dark
-colorscheme hack
+colorscheme molokai
 set encoding=utf8
 set smartindent
 set number
