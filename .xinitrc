@@ -15,7 +15,7 @@ sh ~/.fehbg &
 #./panel &
 #cd ~/code/tint3/src
 tint3 &
-stalonetray &
 nm-applet &
 owncloud &
+stalonetray &
 exec bspwm

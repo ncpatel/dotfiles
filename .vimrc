@@ -1,4 +1,4 @@
-set tabstop=2
+set tabstop=4
 syntax enable
 set background=dark
 colorscheme molokai

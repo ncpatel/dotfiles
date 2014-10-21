@@ -188,3 +188,5 @@ alias kirk="ssh n.wpi.edu"
 alias copy="xclip -sel clip"
 alias dvorak="setxkbmap dvorak"
 alias us="setxkbmap us"
+alias objump="objdump -M intel -D"
+

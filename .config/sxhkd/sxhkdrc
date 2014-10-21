@@ -107,7 +107,7 @@ super + space
 super + shift + enter
 	chromium
 
-super + p
+Help
 	i3lock -i /home/nileshp/walls/simplecolors.png && xset dpms force off
 
 # make sxhkd reload its configuration files:
