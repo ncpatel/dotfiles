@@ -174,7 +174,7 @@
 					"file": "/home/nileshp/.vimrc",
 					"settings":
 					{
-						"buffer_size": 3272,
+						"buffer_size": 914,
 						"line_ending": "Unix"
 					}
 				}
@@ -294,15 +294,15 @@
 							"semi_transient": false,
 							"settings":
 							{
-								"buffer_size": 3272,
+								"buffer_size": 914,
 								"regions":
 								{
 								},
 								"selection":
 								[
 									[
-										2083,
-										2083
+										0,
+										0
 									]
 								],
 								"settings":
@@ -310,7 +310,7 @@
 									"syntax": "Packages/Text/Plain text.tmLanguage"
 								},
 								"translation.x": 0.0,
-								"translation.y": 1601.0,
+								"translation.y": 0.0,
 								"zoom_level": 1.0
 							},
 							"stack_index": 0,
@@ -354,7 +354,7 @@
 			{
 				"height": 0.0
 			},
-			"position": "0,0,0,0,0,6,20,782,1072,1920,1080",
+			"position": "0,0,0,0,0,6,20,955,1072,1920,1080",
 			"project": "",
 			"replace":
 			{
