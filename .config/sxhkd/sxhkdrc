@@ -4,7 +4,6 @@
 control + alt + t
 	urxvt
 
-
 super + alt + Escape
 	bspc quit
 
@@ -69,6 +68,12 @@ super + {_,shift + }{1-9,0}
 
 ~button1
 	bspc pointer -g focus
+
+#~button4
+#	bspc desktop -f prev
+
+#~button5
+#    bspc desktop -f next
 
 super + button{1-3}
 	bspc pointer -g {move,resize_side,resize_corner}

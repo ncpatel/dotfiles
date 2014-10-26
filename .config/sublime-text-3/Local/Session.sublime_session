@@ -160,17 +160,21 @@
 			"buffers":
 			[
 				{
-					"file": "/home/nileshp/Downloads/tracking/inference.py",
+					"contents": "set nocompatible\n\nruntime bundle/vim-pathogen/autoload/pathogen.vim\nexecute pathogen#infect()\nfiletype plugin indent on\n\n\" autocommands {{{\naugroup filetype_vim\n    autocmd!\n    autocmd FileType vim setlocal foldmethod=marker\naugroup END\n\n\" automagically leave insert mode after a delay\n\"autocmd InsertEnter * let updaterestore = &updatetime | set updatetime=10000\n\"autocmd InsertLeave * let &updatetime = updaterestore\n\"autocmd CursorHoldI * stopinsert\n\" }}}\n\n\" ftdetect {{{\nautocmd BufNewFile,BufRead *.muttrc set filetype=muttrc\nautocmd BufNewFile,BufRead *.strace* set filetype=strace\n\" vim thinks .md is modula2\nautocmd BufNewFile,BufRead *.md set filetype=markdown\n\" vim thinks empty .tex file is plaintex\nautocmd BufNewFile,BufRead *.tex set filetype=tex\n\" }}}\n\n\" ftplugin {{{\nautocmd FileType mail setlocal formatoptions+=aw \" support format=flowed\n\" TODO collapse these all into one line\nautocmd FileType text setlocal textwidth=78 autoindent\nautocmd FileType tex setlocal textwidth=78 autoindent\nautocmd FileType markdown setlocal textwidth=78 autoindent\n\" }}}\n\n\" YouCompleteMe config {{{\n\n\" disable youcompleteme for C sources, because its warnings are annoying\n\" TODO configure ycm to not be annoying\nlet g:ycm_filetype_blacklist = {'c': 1}\n\n\" }}}\n\n\" Syntastic config {{{\n\nlet g:syntastic_python_checkers = ['python', 'flake8']\nlet g:syntastic_java_checkers = ['javac', 'checkstyle']\n\n\" }}}\n\n\" RainbowParentheses config {{{\n\n\" let g:rbpt_colorpairs = [\n\"     \\ ['13',  'DarkOrchid3'],\n\"     \\ ['4',   'firebrick3'],\n\"     \\ ['2',   'RoyalBlue3'],\n\"     \\ ['3',   'SeaGreen3'],\n\"     \\ ['9',   'DarkOrchid3'],\n\"     \\ ['1',   'firebrick3'],\n\"     \\ ]\n\n\" augroup RainbowParentheses\n\"     autocmd!\n\"     autocmd VimEnter * RainbowParenthesesToggle\n\"     autocmd Syntax * RainbowParenthesesLoadRound\n\"     autocmd Syntax * RainbowParenthesesLoadSquare\n\"     autocmd Syntax * RainbowParenthesesLoadBraces\n\" augroup END\n\n\" }}}\n\n\" misc {{{\nset autowrite\nset backspace=indent,eol,start\nset cpoptions+=J \" sentences are separated by two spaces\n\" TODO set t flag on things that aren't code: markdown, latex, mail, and text\n\" and the a flag too for autoformat while typing\nset formatoptions+=croqj \" make comments nicer to format\nset gdefault\nset history=1000\nset modelines=0 \" no mode lines\nset mouse=a \" enable mouse everywhere\nset nomodeline\nset viminfo='1000,f1,<50,s10,h\n\" fix annoying delay in terminal when pressing ESC to exit insert mode\nif ! has('gui_running')\n    set ttimeoutlen=10\n    augroup FastEscape\n        autocmd!\n        au InsertEnter * set timeoutlen=0\n        au InsertLeave * set timeoutlen=1000\n    augroup END\nendif\n\" }}}\n\n\" searching {{{\nset ignorecase\nset incsearch\nset nohlsearch\nset nowrapscan\nset smartcase\n\" }}}\n\n\" indentation {{{\nset expandtab\nset shiftwidth=4\nset softtabstop=4\n\" only indent one sw in python after open paren\nlet g:pyindent_open_paren = '&sw'\n\" }}}\n\n\" display {{{\nsyntax enable\nsyntax sync fromstart\nset background=dark\n\" TODO this doesn't seem to work, unless I reload the vimrc after opening a\n\" file\nlet g:solarized_italic=0\ncolorscheme solarized\n\n\"set foldcolumn=1\nset cmdwinheight=3\nset cursorcolumn\nset cursorline\nset foldcolumn=0\nset foldmethod=manual\nset laststatus=2 \" always show status line\nset lazyredraw\nset linebreak\nset list\nset listchars=tab:>=,trail:■,extends:>,precedes:<,nbsp:+\nset number\nset ruler\nset scrolloff=3\nset showcmd\nset showmatch\nset sidescroll=1\nset sidescrolloff=5\nset splitbelow\nset splitright\nset statusline=%<%1*%f%0*\\ %h%r%y%{fugitive#statusline()}%2*%m%0*%=%02.B\\ %5.(%c%V%)\\ %4.l/%L\\ %P\nset textwidth=0 \" TODO make this depend on filetype\nset title\nset titlestring=vim\\ %f\\ %h%r%y%m\nset virtualedit=all\n\" highlight column 81 of lines that are at least that long\n\"highlight ColorColumn ctermbg=10\n\"call matchadd('ColorColumn', '\\%81v', 100)\n\" }}}\n\n\" these break plugin indent\n\"set autoindent\n\" TODO set this with filetypes for which there are no indent rules\n\"set smartindent\n\nif has('persistent_undo')\n    set undofile\n    set undodir=~/.vim/backup/\nendif\n\n\" possibly not a good idea on multi-user system\n\"set backupdir=~/.vim/backup/\n\"set directory=~/.vim/backup/\n\n\" gui specific\n\"set guifont=Envy\\ Code\\ R\\ 10\n\"nnoremap<leader>t :au! FocusLost<cr>\n\"au FocusLost * :wa\n\n\" bindings {{{\n\n\" all of these will change\nnoremap <C-e> <nop>\nnoremap H <nop>\nnoremap K <nop>\nnoremap L <nop>\nnoremap M <nop>\nnoremap N <nop>\nnoremap S <nop>\nnoremap T <nop>\nnoremap V <nop>\nnoremap k <nop>\nnoremap l <nop>\nnoremap n <nop>\nnoremap s <nop>\nnoremap t <nop>\nnoremap v <nop>\n\" as yet unused\nnoremap <C-v> <nop>\nnoremap B <nop>\nnoremap W <nop>\nnoremap b <nop>\nnoremap w <nop>\nnoremap { <nop>\nnoremap } <nop>\n\" make arrow keys useful\ninoremap <right> <nop>\ninoremap <up> <c-x><c-y>\ninoremap <left> <nop>\ninoremap <down> <c-x><c-e>\nnoremap <right> 3zl\nnoremap <s-right> zL\nnoremap <up> <c-u>\n\" TODO doesn't work in rxvt-unicode\n\"noremap <s-up> <c-y>\nnoremap <left> 3zh\nnoremap <s-left> zH\nnoremap <down> <c-d>\n\" TODO doesn't work in rxvt-unicode\n\"noremap <s-down> <c-e>\n\n\" make movement keys nice for dvorak\n\" (h is fine where it is)\nnoremap t j\nnoremap n k\nnoremap s l\n\n\" shift makes movement faster\nnoremap H b\nnoremap T }\nnoremap N {\nnoremap S w\n\n\" put s and S somewhere\nnoremap v s\nnoremap V S\n\n\" put n and N somewhere\nnoremap l n\nnoremap L N\n\n\" M for 'manual'; free up K\nnoremap M K\n\n\" put t and T somewhere\nnoremap k t\nnoremap K T\n\n\" visual on home row\nnoremap e v\nnoremap E V\nnoremap <C-e> <C-V>\n\n\" split line at cursor\nnnoremap j i<cr><esc>k$\n\n\" consistency with D\nnnoremap Y y$\n\n\" prefer ex mode, start in insert\nnnoremap : q:i\nnnoremap q: :\n\n\" execute macro over all lines\nvnoremap @q :normal @q<cr>\nvnoremap <leader>s :sort<cr>\n\nnnoremap <leader><space> :set hlsearch! hlsearch?<cr>\nif exists(\":Tabularize\")\n    \" 'e' for \"equals\"\n    nnoremap <leader>ae :Tabularize /=<cr>\n    vnoremap <leader>ae :Tabularize /=<cr>\n    \" 'c' for \"colon\"\n    nnoremap <leader>ac :Tabularize /:\\zs<cr>\n    vnoremap <leader>ac :Tabularize /:\\zs<cr>\nendif\n\" search for non-ascii characters (space and tilde are the limits of\n\" ascii printable chars)\nnnoremap <leader>u /[^ -~]<cr>\nnnoremap <leader>d :read !date +\\%Y-\\%m-\\%d<cr>\nnnoremap <leader>l :set list! list?<cr>\nnnoremap <leader>m :make<cr>\nnnoremap <leader>o :browse oldfiles<cr>\nnnoremap <leader>p :set paste! paste?<cr>\n\" reload config\nnnoremap <leader>r :source $MYVIMRC<cr>\n\" search for extra space at the end of lines\nnnoremap <leader>s / \\+$<cr>\n\" edit .vimrc\nnnoremap <leader>v :split $MYVIMRC<cr>\nnnoremap <leader>V :edit $MYVIMRC<cr>\nnnoremap b :write<cr>\n\" fold with matching delimiters\nnnoremap <leader>z v%:fo<cr>\n\" }}} bindings\n",
+					"file": "/home/nileshp/Downloads/vimrc",
+					"file_size": 6949,
+					"file_write_time": 130572833796653634,
 					"settings":
 					{
-						"buffer_size": 16606,
-						"line_ending": "Unix"
+						"buffer_size": 6662,
+						"line_ending": "Windows"
 					}
 				},
 				{
+					"file": "/home/nileshp/.vimrc",
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 3272,
 						"line_ending": "Unix"
 					}
 				}
@@ -207,8 +211,9 @@
 			},
 			"file_history":
 			[
-				"/home/nileshp/code/test/test.py",
 				"/home/nileshp/Downloads/tracking/inference.py",
+				"/home/nileshp/Downloads/personnel.c",
+				"/home/nileshp/code/test/test.py",
 				"/home/nileshp/Downloads/tracking/bustersAgents.py",
 				"/home/nileshp/Downloads/GammaHantoMasterTest.java",
 				"/home/nileshp/code/jarvis/demo/client.js",
@@ -257,46 +262,19 @@
 					[
 						{
 							"buffer": 0,
-							"file": "/home/nileshp/Downloads/tracking/inference.py",
+							"file": "/home/nileshp/Downloads/vimrc",
 							"semi_transient": false,
 							"settings":
 							{
-								"buffer_size": 16606,
+								"buffer_size": 6662,
 								"regions":
 								{
 								},
 								"selection":
 								[
 									[
-										0,
-										0
-									]
-								],
-								"settings":
-								{
-									"syntax": "Packages/Python/Python.tmLanguage"
-								},
-								"translation.x": 0.0,
-								"translation.y": 1778.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 1,
-							"type": "text"
-						},
-						{
-							"buffer": 1,
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 0,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										0,
-										0
+										6231,
+										6231
 									]
 								],
 								"settings":
@@ -304,7 +282,35 @@
 									"syntax": "Packages/Text/Plain text.tmLanguage"
 								},
 								"translation.x": 0.0,
-								"translation.y": 0.0,
+								"translation.y": 4413.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 1,
+							"type": "text"
+						},
+						{
+							"buffer": 1,
+							"file": "/home/nileshp/.vimrc",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 3272,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										2083,
+										2083
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Text/Plain text.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 1601.0,
 								"zoom_level": 1.0
 							},
 							"stack_index": 0,
@@ -348,7 +354,7 @@
 			{
 				"height": 0.0
 			},
-			"position": "0,0,0,0,0,6,20,955,1072,1920,1080",
+			"position": "0,0,0,0,0,6,20,782,1072,1920,1080",
 			"project": "",
 			"replace":
 			{
