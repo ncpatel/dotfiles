@@ -10,13 +10,13 @@ super + alt + Escape
 super + w
 	bspc window -c
 
-super + t
+super + y
 	bspc desktop -l next
 
-super + b
+super + x
 	bspc desktop -B
 
-super + {s,f}
+super + {o,u}
 	bspc window -t {floating,fullscreen}
 
 super + {grave,Tab}
@@ -25,21 +25,21 @@ super + {grave,Tab}
 super + apostrophe
 	bspc window -s last
 
-super + {o,i}
+super + {r,c}
 	bspc control --record-history off; \
 	bspc window {older,newer} -f; \
 	bspc control --record-history on
 
-super + y
+super + f
 	bspc window -w last.manual
 
 super + m
 	bspc window -s biggest
 
-super + {_,shift + }{h,j,k,l}
+super + {_,shift + }{h,t,n,s}
 	bspc window -{f,s} {left,down,up,right}
 
-super + {_,shift + }c
+super + {_,shift + }j
 	bspc window -f {next,prev}
 
 super + {comma,period}
@@ -48,16 +48,16 @@ super + {comma,period}
 super + bracket{left,right}
 	bspc desktop -f {prev,next}
 
-super + ctrl + {h,j,k,l}
+super + ctrl + {h,t,n,s}
 	bspc window -p {left,down,up,right}
 
 super + ctrl + {_,shift + }space
 	bspc {window -p cancel,desktop -c}
 
-super + alt + {h,j,k,l}
+super + alt + {h,t,n,s}
 	bspc window -e {left -10,down +10,up -10,right +10}
 
-super + alt + shift + {h,j,k,l}
+super + alt + shift + {h,t,n,s}
 	bspc window -e {right -10,up +10,down -10,left +10}
 
 super + ctrl + {1-9}
@@ -112,9 +112,8 @@ super + space
 super + shift + enter
 	chromium
 
-Help
-	i3lock -i /home/nileshp/walls/simplecolors.png && xset dpms force off
-
+super + l
+	 ~/.scripts/lock.sh
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
